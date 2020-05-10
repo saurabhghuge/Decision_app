@@ -1,0 +1,77 @@
+"use strict";
+
+console.log('App.js is running bro');
+
+// JSX - JavaScript XML
+var user = {
+    name: "luke",
+    age: 19,
+    loc: "Pune",
+    saa: ['w', 'www']
+};
+//writing funtion to check wheter location exist or not
+function getlocation(location) {
+    if (location) {
+        return React.createElement(
+            "p",
+            null,
+            " Location : ",
+            location
+        );
+    }
+}
+
+var template = React.createElement(
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        "Name :",
+        user.name ? user.name : "Anonymous "
+    ),
+    user.age && user.age >= 18 && React.createElement(
+        "p",
+        null,
+        "Age:",
+        user.age
+        //this is boolean  operaton example 
+
+    ),
+    getlocation(user.loc),
+    React.createElement(
+        "p",
+        null,
+        user.saa.length > 0 ? " here are " : " no  "
+        //this is ternery operator example
+        ,
+        " "
+    )
+);
+//<h1>This is JSX from app.js</h1>;
+var trailtemp = React.createElement(
+    "div",
+    null,
+    React.createElement(
+        "h1",
+        null,
+        " saurabh ghuge"
+    ),
+    React.createElement(
+        "p",
+        null,
+        "age : 21  "
+    ),
+    React.createElement(
+        "p",
+        null,
+        "locarion : Mumbai"
+    )
+);
+
+//var template = /*#__PURE__*/React.createElement("p", null, "This is JSX from app.js");  
+var appRoot = document.getElementById("app");
+ReactDOM.render(template, appRoot);
+'use strict';
+
+console.log('of');
